@@ -21,12 +21,16 @@ function api_data_importer_callback() {
     }
     ?>
     <div class="wrap">
-        <h1>
-            <?php echo esc_html(get_admin_page_title()); ?>
-        </h1>
-        <button id="import-api-data" class="button button-primary">
-            <?php _e('Import Data from API', 'api-data-importer');?>
-        </button>
+        <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <form method="post" id="api-importer-form">
+            <label for="api-variable">
+                <?php _e('Country:', 'api-data-importer');?>
+            </label>
+            <input type="text" id="api-variable" name="api_variable" required>
+            <button id="import-api-data" class="button button-primary" type="submit">
+                <?php _e('Import data', 'api-data-importer');?>
+            </button>
+        </form>
     </div>
     <?php
 }

@@ -1,8 +1,13 @@
 <?php
 function import_api_data() {
+
+
+    // Get the API variable from the AJAX request
+    $api_input_value = isset($_POST['api_variable']) ? sanitize_text_field($_POST['api_variable']) : '';
+
     // Inserting the API URL
-    // Example is using https://randomuser.me/api/ to get information about a random fake user, including gender, name, email, address, etc.
-    $api_url = 'https://randomuser.me/api/';
+    // Example is using https://restcountries.com/ to get information about a country
+    $api_url = 'https://restcountries.com/v3.1/name/' . urlencode($api_input_value);
 
     // Fetch data from the API using cURL
     // Initialize cURL session
@@ -32,28 +37,49 @@ function import_api_data() {
     // Decode JSON response
     $data = json_decode($response, true);
 
-    // Get ready to loop through the results.
-    $items = $data['results'];
-
     // Loop through the data and create custom post type entries
-    foreach ($items as $item) {
-        $name = $item['name']['first'] . ' ' . $item['name']['last'];
-        $gender = $item['gender'];
+    foreach ($data as $item) {
+        // Post variables
+        $type   =   'api_data_importer'; // custom post type
+        $status =   'publish'; // draft or publish
+
+        // Set values
+        $name = $item['name']['common'];
+
+        $content = 'The official name is ' . $item['flag'] . ' ' . $item['name']['official'] . '. The capital is ' . $item['capital'][0] . '. ' . $item['flags']['alt'] . ' The country belongs to ' . $item['subregion'];
 
         // Prepare post data
         $post_data = array(
             'post_title'    =>  $name,
-            'post_content'  =>  $gender,
-            'post_status'   =>  'publish', // Publish the post straight away
-            'post_type'     =>  'api_data_importer', // Set to your custom post type
+            'post_content'  =>  $content,
+            'post_status'   =>  $status, // Publish the post straight away
+            'post_type'     =>  $type, // Set to your custom post type
         );
 
-        // Insert the post
-        wp_insert_post($post_data);
+        // Check if a post exists with the same name
+        if (post_exists($name, '', '', $type, $status)) {
+            // Get the ID of the post if it already exists
+            $pid = post_exists($name, '', '', $type, $status);
+
+            // Override current post
+            $post_update = array(
+                'ID' => $pid,
+                'post_content' => $content,
+            );
+
+            // Update the post with new content
+            wp_update_post( $post_update );
+
+            // Send a success message
+            echo 'Post already exists. Data updated successfully!';
+        } else {
+            // Create a new post
+            wp_insert_post($post_data);
+            // Send a success message
+            echo 'Data imported successfully!';
+        }
     }
 
-    // Send a success message
-    echo 'Data imported successfully!';
     wp_die();
 }
 add_action('wp_ajax_import_api_data', 'import_api_data');
