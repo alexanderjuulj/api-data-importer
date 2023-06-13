@@ -1,82 +1,46 @@
-<a name="readme-top"></a>
+# API Data Importer WordPress Plugin Documentation
 
-<br />
-<div align="center">
-  <h3 align="center">API Data Importer Plugin</h3>
- 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
 
-  <p align="center">
-    API Data Importer is an easy-to-use WordPress plugin designed to seamlessly import data from any API using PHP cURL and convert it into a custom post type – all with a single click. Built for both developers, this plugin automates the data import process and eliminates tedious manual tasks, freeing up your time for more important endeavors.
-    <br />
-    <a href="https://github.com/alexanderjuulj/api-data-importer"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/alexanderjuulj/api-data-importer/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/alexanderjuulj/api-data-importer/issues">Request Feature</a>
-  </p>
-</div>
+## Introduction
 
+API Data Importer is an easy-to-use WordPress plugin designed to seamlessly import data from any API using PHP cURL and convert it into a custom post type – all with a single click. Built for both developers, this plugin automates the data import process and eliminates tedious manual tasks, freeing up your time for more important endeavors.
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+## Requirements
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- WordPress 5.0 or higher
+- PHP 7.1 or higher
 
+## Installation
 
-<!-- GETTING STARTED -->
-## Getting Started
+1. Download the files from the [API Data Importer GitHub repository](https://github.com/alexanderjuulj/api-data-importer).
+2. In the WordPress admin, go to **Plugins > Add New**.
+3. Click **Upload Plugin**.
+4. Choose the ZIP file you downloaded and click **Install Now**.
+5. Click **Activate Plugin**.
+6. Go to **Settings > Permalinks**.
+7. Press **Save Changes** to re-save permalinks.
 
-### Installation
+<SCREENSHOT HERE>
 
-1. Download the files from the repo.
-2. In the WordPress admin, go to Plugins > Add New:
-3. Click Upload Plugin:
-4. Choose the ZIP file you downloaded and click Install Now:
-5. Click Activate Plugin.
-6. Go to Settings > Permalinks. 
-7. Press Save Changes to re-save permalinks. 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Go to the WordPress dashboard, go to API Data Import > Data Importer. 
-2. Press the "Import Data from API" button. 
-3. Data is imported to the chosen post type. 
+1. In the WordPress dashboard, navigate to **API Data Import > Data Importer**.
+2. Press the **Import Data from API** button.
+3. Data is imported to the chosen post type.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<SCREENSHOT HERE>
 
-See the [open issues](https://github.com/alexanderjuulj/api-data-importer/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this plugin better, please fork the repo and create a pull request. You can also open an issue with the tag "enhancement". Don't forget to give the project a star! Your contributions are greatly appreciated.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -84,24 +48,12 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+API Data Importer WordPress Plugin is distributed under the MIT License. See `LICENSE.txt` in the GitHub repository for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
 ## Contact
 
 Alexander Juul Jakobsen - [alexanderjuulj.com](https://jakobsen.digital)
 
 Project Link: [https://github.com/alexanderjuulj/api-data-importer](https://github.com/alexanderjuulj/api-data-importer)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
