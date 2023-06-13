@@ -1,0 +1,53 @@
+/* =Page <body> class for post type
+-------------------------------------------------------------- */
+.single-amazon_product {
+	background-color: #fafafa;
+}
+
+/* =Product <main>
+-------------------------------------------------------------- */
+.amazon-product {
+    section {
+        padding: 0; /* Remove padding from theme */
+    }
+    
+    // Thumbnail on page
+    &__image {
+        max-width: 100%; /* Set max width */
+        height: auto;  /* Automatically find the right height */
+    }
+    &__price {
+        // Typography
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        // Layout
+        margin-bottom: 1.5rem;
+
+        // Currency 
+        small {
+            // Typograhpy
+            font-size: 65%;  /* Percentage of parent font size */
+            font-weight: 300;
+        }
+    }
+    &__heading {
+        // Typography
+        font-size: 2.25rem;
+        color: var(--clr-text);
+        line-height: 1.4;  
+        font-weight: bold;
+        text-transform: uppercase;
+
+        // Layout 
+        margin-top: 0;
+    }
+}
+
+/* =Gallery
+-------------------------------------------------------------- */
+.flex-direction-nav {
+    a::before {
+        line-height: 1; /* Fixes the navigation buttons on hover */
+    }
+}
