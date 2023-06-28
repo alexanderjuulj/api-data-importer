@@ -3,8 +3,8 @@
 function api_data_importer_options_page() {
     add_submenu_page(
         'edit.php?post_type=api_data_importer', // slug name for the parent menu 
-        __( 'Data Importer', 'api-data-importer' ), // Title tags of the page when the menu is selected
-        __( 'Data Importer', 'api-data-importer' ), // Menu title.    
+        __( 'API Data Imports', 'api-data-importer' ), // Title tags of the page when the menu is selected
+        __( 'Import Data', 'api-data-importer' ), // Menu title.    
         'manage_options', // Capability required for this menu to be displayed to the user
         'data-importer', // Unique slug name to refer to this menu by
         'api_data_importer_callback', // The function to be called to output the content for this page

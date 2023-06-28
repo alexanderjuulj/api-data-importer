@@ -1,7 +1,6 @@
 <?php
 function import_api_data() {
 
-
     // Get the API variable from the AJAX request
     $api_input_value = isset($_POST['api_variable']) ? sanitize_text_field($_POST['api_variable']) : '';
 
